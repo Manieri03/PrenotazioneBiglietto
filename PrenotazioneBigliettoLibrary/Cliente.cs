@@ -40,14 +40,15 @@ namespace PrenotazioneBigliettoLibrary
             {
                 try
                 {
-                    int c = int.Parse(cellulare);
+                    Int64.Parse(cellulare);
+                    this.cellulare = cellulare;
                 }
                 catch (Exception)
                 {
-                    throw new Exception("Verifica che siano inseriti soltanto numeri");
+                    throw new Exception("Il cellulare deve essere di 10 cifre e deve contenere soltanto numeri");
                 }
             }
-            else throw new Exception("Il cellulare deve essere di 10 cifre");
+            else throw new Exception("Il cellulare deve essere di 10 cifre e deve contenere soltanto numeri");
         }
 
         
