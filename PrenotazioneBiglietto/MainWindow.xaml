@@ -79,7 +79,7 @@
             <Button x:Name="btnAggiungiCliente"  Content="Aggiungi Cliente" Width="160" Height="33" FontSize="18" FontWeight="Bold" BorderBrush="Black" BorderThickness="0,0,5,5" Foreground="White" Background="Brown" Click="BtnAggiungiCliente_Click" >
                 <Button.Resources>
                     <Style TargetType="Border">
-                        <Setter Property="CornerRadius" Value="15"></Setter>
+                        <Setter Property="CornerRadius" Value="15" ></Setter>
                     </Style>
                 </Button.Resources>
             </Button>
