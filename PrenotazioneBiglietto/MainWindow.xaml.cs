@@ -55,7 +55,7 @@ namespace PrenotazioneBiglietto
                 {
                     if (btnM.IsChecked == true)
                     {
-                        cliente.SetSesso(true); 
+                        cliente.SetSesso(true);  
                     }
                     else
                     {
