@@ -45,8 +45,8 @@
             <TextBox x:Name="txtNome" Width="130" Height="30"></TextBox>
         </StackPanel>
 
-        
-        
+
+
         <StackPanel Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,70,0">
             <Label Content="Cognome:" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Foreground="brown" Height="35" Width="95"/>
         </StackPanel>
@@ -55,9 +55,9 @@
             <TextBox x:Name="txtCognome" Width="130" Height="30"></TextBox>
         </StackPanel>
 
-        
-        
-        
+
+
+
         <StackPanel Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,80,0">
             <Label Content="Cellulare:" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Foreground="brown" Height="35" Width="85"/>
         </StackPanel>
@@ -66,15 +66,14 @@
             <TextBox x:Name="txtCellulare" Width="130" Height="30"></TextBox>
         </StackPanel>
 
-        <StackPanel Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,0,50,0">
-            <RadioButton x:Name="btnM" Height="16" ></RadioButton>
-            <Label Content="M" FontSize="18" FontWeight="Bold"  Foreground="brown" ></Label>
-        </StackPanel>
-        
-        <StackPanel Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Orientation="Horizontal" Margin="60,0,0,0">
+        <StackPanel Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" Orientation="Horizontal" >
+            <RadioButton x:Name="btnM" Height="16"></RadioButton>
+            <Label Content="M" FontSize="18" FontWeight="Bold"  Foreground="brown" Padding="0,5,100,0"></Label>
             <RadioButton x:Name="btnF" Height="16" ></RadioButton>
             <Label Content="F" FontSize="18" FontWeight="Bold"  Foreground="brown" ></Label>
         </StackPanel>
+
+
 
         <StackPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Button x:Name="btnAggiungiCliente"  Content="Aggiungi Cliente" Width="160" Height="33" FontSize="18" FontWeight="Bold" BorderBrush="Black" BorderThickness="0,0,5,5" Foreground="White" Background="Brown" Click="BtnAggiungiCliente_Click" >
@@ -94,15 +93,15 @@
 
         <StackPanel Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,0,0,0">
             <ComboBox x:Name="cmbSelezionaCliente1" Width="130" Height="30"></ComboBox>
-            
+
         </StackPanel>
 
 
         <StackPanel Grid.Row="7" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
             <DatePicker x:Name="Calendario"></DatePicker>
         </StackPanel>
-        
-        
+
+
 
         <StackPanel Grid.Row="8" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,90,0">
             <Label Content="Orario:" FontSize="18" FontWeight="Bold" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Foreground="brown" Height="35" Width="70"/>
@@ -132,13 +131,13 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            
+
         </StackPanel>
 
-        
+
 
         <StackPanel Grid.Row="10" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBox x:Name="txt1" Width="330" Height="70"></TextBox>
+            <ListBox x:Name="list1" Width="330" Height="70"></ListBox>
         </StackPanel>
 
 
@@ -183,7 +182,7 @@
 
 
         <StackPanel  Grid.Row="14" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBox x:Name="txt2" Width="400" Height="40"></TextBox>
+            <ListBox x:Name="list2" Width="400" Height="40"></ListBox>
         </StackPanel>
 
         <StackPanel Grid.Row="15" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,30,0">

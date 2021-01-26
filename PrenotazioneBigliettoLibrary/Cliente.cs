@@ -54,7 +54,7 @@ namespace PrenotazioneBigliettoLibrary
 
         public string Stampa()
         {
-            return $"{nome} {cognome}, il cellulare è {cellulare}";
+            return $"{sesso},{nome} {cognome}";
         }
     }
 }
