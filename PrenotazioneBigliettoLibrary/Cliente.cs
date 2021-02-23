@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PrenotazioneBigliettoLibrary
 {
@@ -8,6 +9,8 @@ namespace PrenotazioneBigliettoLibrary
         public string cognome { get; set; }
         private string cellulare;
         private string sesso;
+
+        public List<Prenotazione> Prenotazioni = new List<Prenotazione>();
 
         public Cliente(string nome, string cognome)
         {
@@ -51,11 +54,20 @@ namespace PrenotazioneBigliettoLibrary
             else throw new Exception("Il cellulare deve essere di 10 cifre e deve contenere soltanto numeri");
         }
 
-        
 
         public string Stampa()
         {
             return $"{sesso},{nome} {cognome}";
+        }
+
+        public void AddPrenotazione(Prenotazione prenotazione)
+        {
+            Prenotazioni.Add(prenotazione);
+        }
+
+        public void RimuoviPrenotazione(Prenotazione prenotazione)
+        {
+            Prenotazioni.Remove(prenotazione);
         }
     }
 }

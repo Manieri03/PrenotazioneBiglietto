@@ -21,9 +21,13 @@ namespace PrenotazioneBiglietto
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<Cliente> clienti = new List<Cliente>();
+        private List<Prenotazione> prenotazioni = new List<Prenotazione>();
+        private string[] ora = new string[] { "18.00", "20.30", "21.00" };
         public MainWindow()
         {
             InitializeComponent();
+            
         }
 
         private void BtnAggiungiCliente_Click(object sender, RoutedEventArgs e)
@@ -79,5 +83,65 @@ namespace PrenotazioneBiglietto
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void CmbOrario_Loaded(object sender, RoutedEventArgs e)
+        {
+            foreach (string s in ora)
+            {
+                cmbOrario.Items.Add(s);
+            }
+        }
+
+
+        private void Btnaggiungi_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if(cmbSelezionaCliente1.SelectedIndex!=-1 && Calendario.SelectedDate!=null && cmbOrario.SelectedIndex != -1)
+                {
+                    DateTime data = Convert.ToDateTime(Calendario.Text);
+                    string ora = cmbOrario.Text;
+                    Cliente cliente = clienti[cmbSelezionaCliente1.SelectedIndex];
+                    Prenotazione prenotazione = new Prenotazione(cliente, ora, data);
+                    string prezzo = Convert.ToString(prenotazione);
+
+                    prenotazioni.Add(prenotazione);
+                    list1.Items.Add(prenotazione.Stampa());
+                }
+
+                //reset delle combobox
+                cmbSelezionaCliente1.SelectedIndex = -1;
+                Calendario.SelectedDate = null;
+                cmbOrario.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Attenzione", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+            }
+        }
+
+        private void BtnCancella_Click(object sender, RoutedEventArgs e)
+        {
+            int selezione = list1.SelectedIndex;
+            if (selezione >= 0)
+            {
+                string nome = prenotazioni[selezione].Cliente.ToString();
+                for(int c=0; c<clienti.Count; c++)
+                {
+                    if (nome == clienti[c].ToString())
+                    {
+                        clienti[c].RimuoviPrenotazione(prenotazioni[selezione]);
+                    }
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Attenzione", "Non è stato selezionato alcun elemento dalla lista", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            prenotazioni.RemoveAt(selezione);
+            list1.Items.Remove(list1.SelectedItem);
+        }
+
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PrenotazioneBiglietto"
         mc:Ignorable="d"
-        Title="MainWindow" Height="760" Width="500">
+        Title="MainWindow" Height="760" Width="450">
     <Grid Background="MistyRose">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
@@ -109,12 +109,12 @@
 
 
         <StackPanel Grid.Row="8" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,0,0,0">
-            <ComboBox x:Name="cmbOrario" Width="130" Height="30"></ComboBox>
+            <ComboBox x:Name="cmbOrario" Width="130" Height="30" Loaded="CmbOrario_Loaded"></ComboBox>
         </StackPanel>
 
 
         <StackPanel Grid.Row="9" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,30,0">
-            <Button x:Name="btnaggiungi"  Content="Aggiungi" Width="120" Height="33" FontSize="18" FontWeight="Bold" BorderBrush="Black" BorderThickness="0,0,5,5" Foreground="White" Background="Brown" >
+            <Button x:Name="btnaggiungi"  Content="Aggiungi" Width="120" Height="33" FontSize="18" FontWeight="Bold" BorderBrush="Black" BorderThickness="0,0,5,5" Foreground="White" Background="Brown" Click="Btnaggiungi_Click" >
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="15"></Setter>
@@ -124,7 +124,7 @@
         </StackPanel>
 
         <StackPanel Grid.Row="9" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,0,0,0">
-            <Button x:Name="btnCancella"  Content="Cancella" Width="120" Height="33" FontSize="18" FontWeight="Bold" BorderBrush="Black" BorderThickness="0,0,5,5" Foreground="White" Background="Brown" >
+            <Button x:Name="btnCancella"  Content="Cancella" Width="120" Height="33" FontSize="18" FontWeight="Bold" BorderBrush="Black" BorderThickness="0,0,5,5" Foreground="White" Background="Brown" Click="BtnCancella_Click" >
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="15"></Setter>
