@@ -69,5 +69,39 @@ namespace PrenotazioneBigliettoLibrary
         {
             Prenotazioni.Remove(prenotazione);
         }
+
+        public int ContaPrenotazioni()
+        {
+            int c = 0;
+            for(int i = 0; i < Prenotazioni.Count; i++)
+            {
+                c++;
+            }
+            return c;
+        }
+
+        public double CalcolaCosto()
+        {
+            double c = 0;
+            for(int i = 0; i < Prenotazioni.Count; i++)
+            {
+                c = c + Prenotazioni[i].CostoPrenotazione();
+            }
+            return c;
+        }
+
+        public int ContaPrenotazioniEvento(string ora)
+        {
+            int c = 0;
+
+            for(int i=0; i < Prenotazioni.Count; i++)
+            {
+                if (Prenotazioni[i].Ora == ora)
+                {
+                    c++;
+                }
+            }
+            return c++;
+        }
     }
 }

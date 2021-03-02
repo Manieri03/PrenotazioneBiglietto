@@ -52,6 +52,7 @@ namespace PrenotazioneBiglietto
                 else MessageBox.Show("Inserire un cognome", "Errore", MessageBoxButton.OK, MessageBoxImage.Error);
 
                 Cliente cliente = new Cliente(nome, cognome);
+                clienti.Add(cliente);
 
                 if (btnF.IsChecked == false && btnM.IsChecked == false)
                     MessageBox.Show("Selezionare il sesso", "Errore", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -85,6 +86,15 @@ namespace PrenotazioneBiglietto
         }
 
         private void CmbOrario_Loaded(object sender, RoutedEventArgs e)
+        {
+            foreach (string s in ora)
+            {
+                cmbOrario.Items.Add(s);
+            }
+        }
+
+
+        private void CmbOrario2_Loaded(object sender, RoutedEventArgs e)
         {
             foreach (string s in ora)
             {
@@ -137,11 +147,57 @@ namespace PrenotazioneBiglietto
             }
             else
             {
-                MessageBox.Show("Attenzione", "Non è stato selezionato alcun elemento dalla lista", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Non è stato selezionato alcun elemento dalla lista", "Attenzione", MessageBoxButton.OK, MessageBoxImage.Error);
             }
             prenotazioni.RemoveAt(selezione);
             list1.Items.Remove(list1.SelectedItem);
         }
 
+        private void BtnPrenEvento_Click(object sender, RoutedEventArgs e)
+        {
+            if(cmbSelezionaCliente2.SelectedIndex!=-1 && cmbOrario2.SelectedIndex != -1)
+            {
+                listfinale.Items.Clear();
+
+                int c = clienti[cmbSelezionaCliente2.SelectedIndex].ContaPrenotazioniEvento(cmbOrario2.SelectedItem.ToString());
+                listfinale.Items.Add(c);
+            }
+            else
+            {
+                MessageBox.Show("Attenzione", "Non è stato selezionato alcun elemento dalla lista", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void BtnPrenCliente_Click(object sender, RoutedEventArgs e)
+        {
+
+            if (cmbSelezionaCliente2.SelectedIndex != -1)
+            {
+                double prezzo = 0;
+
+                int c = clienti[cmbSelezionaCliente2.SelectedIndex].ContaPrenotazioni();
+                listfinale.Items.Add($"Il cliente selezionato è {cmbSelezionaCliente2.SelectedValue}:");
+                listfinale.Items.Add($"Prenotazioni totali: {c}");
+
+                prezzo = clienti[cmbSelezionaCliente2.SelectedIndex].CalcolaCosto();
+                listfinale.Items.Add($"Totale spesa: {prezzo}");
+
+                cmbSelezionaCliente2.SelectedIndex = -1;
+            }
+            else
+            {
+                MessageBox.Show("Devi selezionare un cliente ed un orario", "Errore", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void BtnPulisci_Click(object sender, RoutedEventArgs e)
+        {
+            //pulisce tutto
+        }
+
+        private void BtnEsci_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

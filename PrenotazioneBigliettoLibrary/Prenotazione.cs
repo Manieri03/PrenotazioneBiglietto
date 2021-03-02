@@ -14,7 +14,7 @@ namespace PrenotazioneBigliettoLibrary
 
         public Prenotazione(Cliente cliente, string Ora, DateTime Data)
         {
-            Cliente = Cliente;
+            Cliente = cliente;
             this.Ora = Ora;
             this.Data = Data;
             cliente.AddPrenotazione(this);

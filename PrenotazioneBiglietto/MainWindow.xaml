@@ -156,12 +156,12 @@
 
 
         <StackPanel Grid.Row="12" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,0,0">
-            <ComboBox x:Name="cmbOrario2" Width="150" Height="30"></ComboBox>
+            <ComboBox x:Name="cmbOrario2" Width="150" Height="30" Loaded="CmbOrario2_Loaded"></ComboBox>
         </StackPanel>
 
 
         <StackPanel Grid.Row="13" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,15,0">
-            <Button x:Name="btnPrenCliente" Content="Prenotazioni Cliente" Width="190" Height="33" FontSize="18" FontWeight="Bold" BorderBrush="Black" BorderThickness="0,0,5,5" Foreground="White" Background="Brown" >
+            <Button x:Name="btnPrenCliente" Content="Prenotazioni Cliente" Width="190" Height="33" FontSize="18" FontWeight="Bold" BorderBrush="Black" BorderThickness="0,0,5,5" Foreground="White" Background="Brown" Click="BtnPrenCliente_Click" >
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="15"></Setter>
@@ -171,7 +171,7 @@
         </StackPanel>
 
         <StackPanel Grid.Row="13" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15,0,0,0">
-            <Button x:Name="btnPrenEvento" Content="Prenotazioni Evento" Width="190" Height="33" FontSize="18" FontWeight="Bold" BorderBrush="Black" BorderThickness="0,0,5,5" Foreground="White" Background="Brown" >
+            <Button x:Name="btnPrenEvento" Content="Prenotazioni Evento" Width="190" Height="33" FontSize="18" FontWeight="Bold" BorderBrush="Black" BorderThickness="0,0,5,5" Foreground="White" Background="Brown" Click="BtnPrenEvento_Click" >
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="15"></Setter>
@@ -182,11 +182,11 @@
 
 
         <StackPanel  Grid.Row="14" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <ListBox x:Name="list2" Width="400" Height="40"></ListBox>
+            <ListBox x:Name="listfinale" Width="400" Height="40"></ListBox>
         </StackPanel>
 
         <StackPanel Grid.Row="15" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,30,0">
-            <Button x:Name="btnPulisci" Content="Pulisci" Width="120" Height="33" FontSize="18" FontWeight="Bold" BorderBrush="Black" BorderThickness="0,0,5,5" Foreground="White" Background="Brown" >
+            <Button x:Name="btnPulisci" Content="Pulisci" Width="120" Height="33" FontSize="18" FontWeight="Bold" BorderBrush="Black" BorderThickness="0,0,5,5" Foreground="White" Background="Brown" Click="BtnPulisci_Click" >
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="15"></Setter>
@@ -197,7 +197,7 @@
 
 
         <StackPanel Grid.Row="15" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="30,0,0,0">
-            <Button x:Name="btnEsci" Content="Esci" Width="120" Height="33" FontSize="18" FontWeight="Bold" BorderBrush="Black" BorderThickness="0,0,5,5" Foreground="White" Background="Brown" >
+            <Button x:Name="btnEsci" Content="Esci" Width="120" Height="33" FontSize="18" FontWeight="Bold" BorderBrush="Black" BorderThickness="0,0,5,5" Foreground="White" Background="Brown" Click="BtnEsci_Click" >
                 <Button.Resources>
                     <Style TargetType="Border">
                         <Setter Property="CornerRadius" Value="15"></Setter>
